@@ -33,14 +33,16 @@
   function addItem(e){
     console.log('hello');
     e.preventDefault();
-      const text = (this.document.querySelector("[name=item]")).value;
+      const text = (this.querySelector('[name=item]')).value;
       const item = {
       text: text,
       done: false
     };
+    console.log(item);
+    this.reset();
   }
 
-  addItems.addEventListener("submit", addItem);
+  addItems.addEventListener('submit', addItem);
 
 </script>
 
