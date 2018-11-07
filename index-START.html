@@ -57,8 +57,14 @@
   }
 
   function toggleDone(e){
-    console.log(e);
-    
+    if(!e.target.matches('input')) return;//Skip unless it is an input
+    console.log(e.target);
+    const element = e.target;
+    console.log(element.dataset.index);
+    const index = element.dataset.index;
+    items[index].done = !items[index].done;
+    localStorage.setItem('items', JSON.stringify(items));
+    populateList(items, itemsList);
   }
 
   addItems.addEventListener('submit', addItem);
