@@ -84,6 +84,10 @@
 
   deleteButton.addEventListener('click', deleteHandler);
 
+  buttons.forEach(element => {
+    element.addEventListener('click', buttonHandler);
+  });
+
   populateList(items, itemsList);
 
 </script>
